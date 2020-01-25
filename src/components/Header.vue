@@ -1,10 +1,11 @@
 <template>
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
+            <!--without sending request to server-->
+            <router-link to="/">Home</router-link>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/user">User</a>
+            <router-link to="/user">User</router-link>
         </li>
     </ul>
 </template>
