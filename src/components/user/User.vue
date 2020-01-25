@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>The User Page</h1>
+        <h1>The User, {{ name }} Page</h1>
         <hr>
         <p>Loaded ID: {{ id }}</p>
         <button class="btn btn-primary" @click="navigrateToHome">Go to Home</button>
@@ -9,6 +9,12 @@
 
 <script>
     export default {
+        props: {
+            name: {
+                type: String,
+                default: 'Vue!'
+            }
+        },
         data() {
             return {
                 // $route is route object provided by vuejs
