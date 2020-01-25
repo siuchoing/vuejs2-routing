@@ -1,5 +1,3 @@
-<script src="../../../../../AppData/Local/Temp/Rar$DRa0.615/Section Code (Finished)/src/routes.js"></script>
-<script src="../../../../../AppData/Local/Temp/Rar$DRa0.481/Section Code (Finished)/src/routes.js"></script>
 <template>
     <div class="container">
         <div class="row">
