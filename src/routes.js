@@ -5,6 +5,12 @@ import UserEdit from './components/user/UserEdit.vue';
 import Home from './components/Home.vue';
 import Header from './components/Header.vue';
 
+
+/****************************************
+ * beforeEnter       // can store in another file and simply import.
+ *                   // executing while only if I select the individual user, and hence go to the user detail page
+ ***************************************/
+
 export const routes = [
     { path: '', name: 'home', components: {
         default: Home,
@@ -15,7 +21,10 @@ export const routes = [
         'header-bottom': Header
     }, children: [
         { path: '', component: UserStart },
-        { path: ':id', component: UserDetail },
+        { path: ':id', component: UserDetail, beforeEnter: (to, from, next) => {
+            console.log('inside route setup');
+            next()      // to continues below code
+        } },
         { path: ':id/edit', component: UserEdit, name: 'userEdit' },
     ] },
     { path: '/redirect-user', redirect: '/user' },
