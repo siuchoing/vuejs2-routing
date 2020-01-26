@@ -20,5 +20,6 @@ export const routes = [
     ] },
     { path: '/redirect-user', redirect: '/user' },
     { path: '/redirect-home', redirect: { name: 'home' } },
-    { path: '/redirect-user1-edit', redirect: { name: 'userEdit', params: { id: 1 } } }
+    { path: '/redirect-user1-edit', redirect: { name: 'userEdit', params: { id: 1 } } },
+    { path: '*', redirect: '/' }
 ];
