@@ -12,7 +12,7 @@
     export default {
         methods: {
             navigrateToHome() {
-                this.$router.push('/');
+                this.$router.push({ name: 'home' });
             }
         }
     }
