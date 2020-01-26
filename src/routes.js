@@ -10,12 +10,15 @@ export const routes = [
         default: Home,
         'header-top': Header
     } },
-    { path: '/user', components: {
+    { path: '/user', name: 'user', components: {
         default: User,
         'header-bottom': Header
     }, children: [
         { path: '', component: UserStart },
         { path: ':id', component: UserDetail },
         { path: ':id/edit', component: UserEdit, name: 'userEdit' },
-    ] }
+    ] },
+    { path: '/redirect-user', redirect: '/user' },
+    { path: '/redirect-home', redirect: { name: 'home' } },
+    { path: '/redirect-user1-edit', redirect: { name: 'userEdit', params: { id: 1 } } }
 ];
