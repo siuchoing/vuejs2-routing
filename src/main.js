@@ -12,6 +12,8 @@ Vue.use(VueRouter);
  * mode: 'hash'       // with hash tag (#) style in url, by default (http://localhost:8080/user/#/)
  *
  * scrollBehavior     // in case using the back button and the user scroll down a bit
+ *
+ * beforeEach         // execute this before each routing action
  */
 const router = new VueRouter({
   routes,
@@ -43,6 +45,14 @@ const router = new VueRouter({
      *******************************************/
     //return { x: 0, y: 700 };        // to scroll down edit page at the bottom for 700px without hash and savePosition properties
   }
+});
+
+router.beforeEach((to, from, next) => {
+  console.log('global beforeEach');
+  next();                       // To allow the routing action to continue
+  // next('/');                 // To allow the routing action to this path
+  // next(false);               // To abort the current operation and stay on the page
+  //next({ name: 'user' });    // To allow the routing action to user path
 });
 
 new Vue({
